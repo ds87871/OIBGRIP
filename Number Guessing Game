@@ -1,0 +1,51 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+
+  public static void main(String[] args) {
+    int randomNumber,tries,input;
+
+    Random rand = new Random();
+    Scanner scanner = new Scanner(System.in);
+    
+    randomNumber = rand.nextInt(100) + 1;
+
+    tries = 0;
+    
+    while(true) {
+    
+      System.out.println("Enter your guess (1-100):");
+
+      input = scanner.nextInt();
+      
+      tries++;
+      
+      if (input == randomNumber) {
+        
+        System.out.println("Congrats! You Win!");
+        System.out.println("You took" + tries + " tries");
+        break;
+      }
+      else if(randomNumber > input) {
+
+        System.out.println("Nope! The number you Guess is Lower. Guess again.");
+      }
+      else if(randomNumber < input) {
+
+        System.out.println("Nope! The number you Guess is Higher. Guess again.");
+      }
+
+      else
+      {
+
+        System.out.println("");
+      }
+    }
+    
+    
+    
+    scanner.close();
+    
+  }
+}
